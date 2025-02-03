@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getStudents, createStudent } from "@/lib/studentService";
 import { NextResponse } from "next/server";
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
   const students = await getStudents();
   return NextResponse.json(students, { status: 200 });
 }
